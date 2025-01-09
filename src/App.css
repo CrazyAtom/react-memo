@@ -35,6 +35,24 @@
   text-overflow: ellipsis;
   overflow: hidden;
   padding: 5px 8px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.MemoItem__delete-button {
+  background: none;
+  border: none;
+  color: red;
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-size: 1.3rem;
+  cursor: pointer;
+  display: none;
+}
+
+.MemoItem:hover .MemoItem__delete-button {
+  display: inline-block;
 }
 
 .MemoItem.selected {
