@@ -1,6 +1,6 @@
 function SideBarHeader() {
   return (
-    <div className="SiideBar__header">
+    <div className="SideBarHeader">
       <h3>SideBarHeader</h3>
     </div>
   );

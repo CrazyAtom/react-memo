@@ -8,6 +8,27 @@
   background-color: #f0f0f0;
 }
 
+.SideBarFooter {
+  text-align: center;
+  padding: 10px;
+}
+
+.SideBarFooter__add-button {
+  background: none;
+  border-radius: 100px;
+  border: 2px solid #555;
+  width: 40px;
+  height: 40px;
+  font-size: 1.3rem;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  opacity: 0.5;
+  cursor: pointer;
+}
+
 .MemoItem {
   width: 100%;
   white-space: nowrap;
