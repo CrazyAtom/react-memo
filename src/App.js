@@ -2,22 +2,10 @@ import { memo, useState } from 'react';
 import './App.css';
 import MemoContainer from './components/MemoContainer';
 import SideBar from './components/SideBar';
+import { getItem, setItem } from './lib/storage';
 
 function App() {
-  const [memos, setMemos] = useState([
-    {
-      title: 'Title 1',
-      content: 'Content 1',
-      createdAt: new Date().getTime(),
-      updatedAt: new Date().getTime(),
-    },
-    {
-      title: 'Title 2',
-      content: 'Content 2',
-      createdAt: new Date().getTime(),
-      updatedAt: new Date().getTime(),
-    },
-  ]);
+  const [memos, setMemos] = useState(getItem('memos') || []);
 
   const [selectedMemoIndex, setSelectedMemoIndex] = useState(0);
 
@@ -25,6 +13,7 @@ function App() {
     const newMemos = [...memos];
     newMemos[selectedMemoIndex] = newMemo;
     setMemos(newMemos);
+    setItem('memos', newMemos);
   };
 
   const addMemo = () => {
@@ -38,6 +27,7 @@ function App() {
     const newMemos = [...memos, newMemo];
     setMemos(newMemos);
     setSelectedMemoIndex(newMemos.length - 1);
+    setItem('memos', newMemos);
   };
 
   const deleteMemo = (index) => {
@@ -47,6 +37,7 @@ function App() {
     if (selectedMemoIndex === index) {
       setSelectedMemoIndex(0);
     }
+    setItem('memos', newMemos);
   };
 
   return (
